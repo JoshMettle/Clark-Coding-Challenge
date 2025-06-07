@@ -8,31 +8,32 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\slieffers\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Josh\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\slieffers\\Source\\Repos\\Coding-Challenge\\ClarkCodingChallenge\\ClarkCodingChallenge.csproj",
+      "projectUniqueName": "C:\\Users\\Josh\\source\\repos\\Clark-Coding-Challenge\\ClarkCodingChallenge\\ClarkCodingChallenge.csproj",
       "projectName": "ClarkCodingChallenge",
-      "projectPath": "C:\\Users\\slieffers\\Source\\Repos\\Coding-Challenge\\ClarkCodingChallenge\\ClarkCodingChallenge.csproj",
-      "packagesPath": "C:\\Users\\slieffers\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\slieffers\\Source\\Repos\\Coding-Challenge\\ClarkCodingChallenge\\obj\\",
+      "projectPath": "C:\\Users\\Josh\\source\\repos\\Clark-Coding-Challenge\\ClarkCodingChallenge\\ClarkCodingChallenge.csproj",
+      "packagesPath": "C:\\Users\\Josh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Josh\\source\\repos\\Clark-Coding-Challenge\\ClarkCodingChallenge\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\slieffers\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Josh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "https://nuget.org": {},
-        "https://tfs.clarkinc.biz/DefaultCollection/_packaging/c2aa131e-9bf5-4fdf-9bbe-81bcda5b3920/nuget/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
@@ -44,7 +45,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "netcoreapp3.1": {
@@ -55,7 +62,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -67,7 +75,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
