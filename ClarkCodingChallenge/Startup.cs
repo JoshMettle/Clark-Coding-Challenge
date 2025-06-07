@@ -1,4 +1,5 @@
-﻿using ClarkCodingChallenge.DataAccess;
+﻿using ClarkCodingChallenge.BusinessLogic;
+using ClarkCodingChallenge.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -29,6 +30,7 @@ namespace ClarkCodingChallenge
             });
 
             services.AddSingleton<IContactsDataAccess, ContactsDataAccess>();
+            services.AddScoped<IContactsService, ContactsService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }

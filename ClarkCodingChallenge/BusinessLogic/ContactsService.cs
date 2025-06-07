@@ -4,7 +4,7 @@ using ClarkCodingChallenge.Models;
 
 namespace ClarkCodingChallenge.BusinessLogic
 {
-    public class ContactsService
+    public class ContactsService : IContactsService
     {
         private readonly IContactsDataAccess _contactsDataAccess;
 
