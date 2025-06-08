@@ -1,4 +1,4 @@
-﻿namespace ClarkCodingChallenge.BusinessLogic.RequestDtos
+﻿namespace ClarkCodingChallenge.Models.RequestDtos
 {
     public class GetContactsRequestDto
     {

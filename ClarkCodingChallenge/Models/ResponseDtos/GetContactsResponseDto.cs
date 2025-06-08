@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ClarkCodingChallenge.BusinessLogic.ResponseDtos
+namespace ClarkCodingChallenge.Models.ResponseDtos
 {
     public class GetContactsResponseDto
     {

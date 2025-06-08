@@ -13,6 +13,13 @@ namespace ClarkCodingChallenge.Models
             Email = email;
         }
 
+        public ContactModel(int id, string firstName, string lastName, string email)
+        {
+            Id = id;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+        }
 
         public int Id { get; private set; }
         [Required]

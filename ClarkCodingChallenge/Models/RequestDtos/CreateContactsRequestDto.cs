@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography.X509Certificates;
 
-namespace ClarkCodingChallenge.BusinessLogic.RequestDtos
+namespace ClarkCodingChallenge.Models.RequestDtos
 {
     public class CreateContactsRequestDto
     {

@@ -1,7 +1,7 @@
-﻿using ClarkCodingChallenge.BusinessLogic.Contracts;
-using ClarkCodingChallenge.BusinessLogic.RequestDtos;
-using ClarkCodingChallenge.BusinessLogic.ResponseDtos;
+﻿using ClarkCodingChallenge.Contracts;
 using ClarkCodingChallenge.Models;
+using ClarkCodingChallenge.Models.RequestDtos;
+using ClarkCodingChallenge.Models.ResponseDtos;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,40 +20,46 @@ namespace ClarkCodingChallenge.BusinessLogic
         }
 
         //TODO: Place business logic for contact here
-        public int CreateContact(CreateContactsRequestDto request)
+        public int Create(CreateContactsRequestDto request)
         {
             var contactToCreate = new ContactModel(request.FirstName, request.LastName, request.Email);
 
-            _contactsDataAccess.RecordContact(contactToCreate);
+            var createdContact = _contactsDataAccess.Create(contactToCreate);
 
-            return contactToCreate.Id;
+            return createdContact.Id;
         }
 
-        public ICollection<GetContactsResponseDto> GetContacts(GetContactsRequestDto request)
+        public ICollection<GetContactsResponseDto> Get(GetContactsRequestDto request)
         {
             var isAscendingSort = request.SortOrder != "desc";
             ICollection<ContactModel> contacts;
 
             if (String.IsNullOrEmpty(request.LastName))
             {
-              contacts = _contactsDataAccess.Get();
+                contacts = _contactsDataAccess.Get();
             }
             else
             {
-               contacts = _contactsDataAccess.Get(request.LastName);
+                contacts = _contactsDataAccess.Get(request.LastName);
             }
 
-            if (isAscendingSort)
-            {
-                contacts.OrderBy(x => x.LastName);
-            } else
-            {
-                contacts.OrderByDescending(x => x.LastName);
-            }
+            var sortedContacts = OrderContacts(isAscendingSort, contacts);
 
-            var responseDto = contacts.Select(x => new GetContactsResponseDto(x)).ToList();
+            var responseDto = sortedContacts.Select(x => new GetContactsResponseDto(x)).ToList();
 
             return responseDto;
+        }
+
+        private static ICollection<ContactModel> OrderContacts(bool isAscendingSort, ICollection<ContactModel> contacts)
+        {
+            if (isAscendingSort)
+            {
+               return contacts.OrderBy(x => x.LastName).ThenBy(x => x.FirstName).ToList();
+            }
+            else
+            {
+                return contacts.OrderByDescending(x => x.LastName).ThenByDescending(x => x.FirstName).ToList();
+            }
         }
     }
 }

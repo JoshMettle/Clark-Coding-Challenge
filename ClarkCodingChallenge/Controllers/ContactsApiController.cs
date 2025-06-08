@@ -1,11 +1,11 @@
-﻿using ClarkCodingChallenge.BusinessLogic.Contracts;
-using ClarkCodingChallenge.BusinessLogic.RequestDtos;
+﻿using ClarkCodingChallenge.Contracts;
+using ClarkCodingChallenge.Models.RequestDtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClarkCodingChallenge.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("Api/Contacts")]
     [ApiController]
     public class ContactsApiController : ControllerBase
     {
@@ -19,8 +19,14 @@ namespace ClarkCodingChallenge.Controllers
         [HttpGet()]
         public IActionResult GetContacts(string lastName = null, string sortOrder = "asc")
         {
+            if(sortOrder != "asc" && sortOrder != "desc")
+            {
+                return new BadRequestObjectResult("Sort order must have value of 'asc' or 'desc'");
+            }
             var request = new GetContactsRequestDto(lastName, sortOrder);
-            var response = _contactsService
+            var response = _contactsService.Get(request);
+
+            return new OkObjectResult(response);
         }
     }
 }

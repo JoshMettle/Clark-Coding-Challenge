@@ -1,5 +1,5 @@
 ﻿using ClarkCodingChallenge.BusinessLogic;
-using ClarkCodingChallenge.BusinessLogic.Contracts;
+using ClarkCodingChallenge.Contracts;
 using ClarkCodingChallenge.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

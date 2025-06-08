@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ClarkCodingChallenge.Models;
-using ClarkCodingChallenge.BusinessLogic.RequestDtos;
-using ClarkCodingChallenge.BusinessLogic.Contracts;
+using ClarkCodingChallenge.Contracts;
+using ClarkCodingChallenge.Models.RequestDtos;
 
 namespace ClarkCodingChallenge.Controllers
 {
@@ -32,13 +32,19 @@ namespace ClarkCodingChallenge.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = _contactsService.CreateContact(request);
+                var result = _contactsService.Create(request);
                 return RedirectToAction("Success");
             }
+
             return View(request);
         }
 
         public IActionResult Success()
+        {
+            return View();
+        }
+
+        public IActionResult Errors()
         {
             return View();
         }

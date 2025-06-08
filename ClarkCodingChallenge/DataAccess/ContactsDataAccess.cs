@@ -1,4 +1,4 @@
-﻿using ClarkCodingChallenge.BusinessLogic.Contracts;
+﻿using ClarkCodingChallenge.Contracts;
 using ClarkCodingChallenge.Models;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,27 +13,39 @@ namespace ClarkCodingChallenge.DataAccess
         {
 
         }
-        
+
         /// <summary>
-        /// Adds contact to data store
+        /// <inheritdoc/>
         /// </summary>
         /// <param name="contact"></param>
         /// <returns>returns contact with primary key</returns>
-        public void RecordContact(ContactModel contact)
+        public ContactModel Create(ContactModel contact)
         {
-            var contactId = Contacts.Count + 1;
-            contact.AddId(contactId);
+            var contactCount = Contacts.Count();
+            contact.AddId(contactCount + 1);
             Contacts.Add(contact);
+
+            return contact;
         }
 
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <returns></returns>
         public ICollection<ContactModel> Get()
         {
             return Contacts;
         }
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="lastName"></param>
+        /// <returns></returns>
         public ICollection<ContactModel> Get(string lastName)
         {
-            return Contacts.Where(x => x.LastName == lastName).ToList();
+            return Contacts.Where(x => x.LastName.ToLower() == lastName.ToLower()).ToList();
         }
 
     }
