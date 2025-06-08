@@ -9,7 +9,6 @@
     <h1 class="display-4">Welcome</h1>
     <h2>Add a contact</h2>
 
-
     <form method="post" action="/Contacts/Index">
         <label for="firstName">First Name</label>
         <input id="firstName" name="firstName" type="text" value="@Model?.FirstName" />
@@ -19,7 +18,7 @@
         <input id="email" name="email" type="email" value="@Model?.Email" />
         <button type="submit">Add Contact</button>
     </form>
-
     <div asp-validation-summary="All"></div>
 </div>
+@*Generally, inputs should be marked as required to protect/validate from the frontend. I left them unprotected to display validation errors per the readme*@
 
