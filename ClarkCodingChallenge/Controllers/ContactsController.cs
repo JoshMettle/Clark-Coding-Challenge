@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ClarkCodingChallenge.Models;
 using ClarkCodingChallenge.BusinessLogic.RequestDtos;
-using ClarkCodingChallenge.BusinessLogic;
+using ClarkCodingChallenge.BusinessLogic.Contracts;
 
 namespace ClarkCodingChallenge.Controllers
 {
@@ -28,20 +28,19 @@ namespace ClarkCodingChallenge.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateContact(CreateContactDto request)
+        public IActionResult Index(CreateContactsRequestDto request)
         {
             if (ModelState.IsValid)
             {
-             var result = _contactsService.CreateContact(request);
-                return View();
+                var result = _contactsService.CreateContact(request);
+                return RedirectToAction("Success");
             }
-            return View();
+            return View(request);
         }
 
-        [HttpGet]
-        public IActionResult GetContacts([FromQuery] string lastName, [FromQuery] bool isAscending)
+        public IActionResult Success()
         {
-            return new OkResult();
+            return View();
         }
     }
 }

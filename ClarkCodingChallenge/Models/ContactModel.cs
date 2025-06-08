@@ -25,7 +25,7 @@ namespace ClarkCodingChallenge.Models
 
         public void AddId(int id)
         {
-            this.Id = id;
+            Id = id;
         }
     }
 }

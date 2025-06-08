@@ -1,6 +1,8 @@
-﻿using ClarkCodingChallenge.Models;
+﻿using ClarkCodingChallenge.BusinessLogic.Contracts;
+using ClarkCodingChallenge.Models;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ClarkCodingChallenge.DataAccess
 {
@@ -24,6 +26,15 @@ namespace ClarkCodingChallenge.DataAccess
             Contacts.Add(contact);
         }
 
+        public ICollection<ContactModel> Get()
+        {
+            return Contacts;
+        }
+
+        public ICollection<ContactModel> Get(string lastName)
+        {
+            return Contacts.Where(x => x.LastName == lastName).ToList();
+        }
 
     }
 }

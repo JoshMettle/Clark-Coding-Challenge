@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ClarkCodingChallenge.BusinessLogic.ResponseDtos
 {
-    public class GetContactsDto
+    public class GetContactsResponseDto
     {
-        public GetContactsDto(ContactModel contact)
+        public GetContactsResponseDto(ContactModel contact)
         {
             Id = contact.Id;
             FirstName = contact.FirstName;

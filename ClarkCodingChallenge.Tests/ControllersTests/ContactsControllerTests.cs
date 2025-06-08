@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ClarkCodingChallenge.Tests.ControllerTest
+namespace ClarkCodingChallenge.Tests.ControllersTests
 {
     [TestClass]
     public class ContactsControllerTests

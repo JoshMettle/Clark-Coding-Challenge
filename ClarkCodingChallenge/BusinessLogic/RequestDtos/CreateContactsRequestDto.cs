@@ -3,9 +3,9 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace ClarkCodingChallenge.BusinessLogic.RequestDtos
 {
-    public class CreateContactDto
+    public class CreateContactsRequestDto
     {
-        public CreateContactDto()
+        public CreateContactsRequestDto()
         {
         }
 
